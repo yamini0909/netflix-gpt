@@ -5,12 +5,13 @@ const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [isErrorMessage , SetIsErrorMessage] = useState(null)
 
+
   const email = useRef(null);
   const password = useRef(null);
 
   const handleButtonClick = () =>{
-    console.log("email.current.password", email.current.password)
-   const errorMessage = checkValidData(email.current.value, password.current.value )
+
+   const errorMessage = checkValidData(  email.current.value, password.current.value )
     SetIsErrorMessage(errorMessage)
   }
 
@@ -31,6 +32,7 @@ const Login = () => {
         <h1 className="text-5xl py-4">{isSignIn ? "Sign In" : "Sign Up"}</h1>
         {!isSignIn && (
           <input
+     
             className="px-8 py-2 my-2 bg-slate-800 w-full rounded-md"
             placeholder="Full Name"
           />
